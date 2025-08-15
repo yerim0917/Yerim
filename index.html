@@ -119,23 +119,37 @@
       z-index: 10;
       position: relative;
     }
+
+    /* --- 플레이어 패널을 vintage-image-box와 동일하게 --- */
     .player-panel {
-      background: linear-gradient(120deg, #ffe6cc 75%, #e5d3b3 100%);
       border-radius: 22px;
+      overflow: hidden;
+      width: 320px;
+      max-width: 92vw;
+      /* aspect-ratio: 4/3;  -- 원하지 않으면 빼도 됨 */
+      position: relative;
+      background: #fbeee6;
       box-shadow:
-        0 14px 60px 0 rgba(191,161,129,0.16),
-        0 0 0 18px #fff5 inset,
+        0 12px 60px 0 rgba(191,161,129,0.16),
+        0 0 0 18px #fff7 inset,
         0 1.5px 14px #e5d3b357;
-      padding: 32px 20px 22px 20px;
+      filter: blur(0.4px) brightness(0.98) contrast(0.93) sepia(0.12);
+      padding: 28px 18px 19px 18px;
       display: flex;
       flex-direction: column;
       align-items: center;
-      min-width: 240px;
-      max-width: 96vw;
       margin-bottom: 38px;
       margin-top: 0;
-      position: relative;
-      filter: blur(0.3px) brightness(0.99) contrast(0.95) sepia(0.08);
+      z-index: 5;
+    }
+    .player-panel::after {
+      content: "";
+      position: absolute;
+      left:0;top:0;width:100%;height:100%;
+      background: radial-gradient(circle at 70% 15%, #fff8 0%, transparent 60%);
+      opacity: 0.55;
+      pointer-events: none;
+      z-index: 10;
     }
     #controls {
       display: flex;
@@ -143,12 +157,14 @@
       align-items: center;
       gap: 10px;
       width: 100%;
+      position: relative;
+      z-index: 12;
     }
     .audio-bar-row {
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 2px; /* 버튼, 바, 시간 간격 극소화 */
+      gap: 2px;
       width: 100%;
       margin-top: 3px;
       margin-bottom: 3px;
@@ -175,6 +191,7 @@
       min-height: 22px;
       margin-right: 0;
       padding: 0;
+      z-index: 12;
     }
     .nostalgia-btn svg {
       width: 12px;
@@ -225,6 +242,7 @@
       justify-content: center;
       gap: 8px;
       margin-top: 7px;
+      z-index: 12;
     }
     .volume-slider {
       width: 110px;
@@ -252,12 +270,8 @@
       display: block;
     }
     @media (max-width:640px) {
-      .vintage-image-box { width: 96vw; }
-      .player-panel {
-        padding: 5vw 2vw 18px 2vw;
-        min-width: 0;
-        margin-bottom: 12vw;
-      }
+      .vintage-image-box, .player-panel { width: 96vw; }
+      .player-panel { padding: 5vw 2vw 18px 2vw; min-width: 0; margin-bottom: 12vw;}
       .track-title { font-size: 1.04rem; padding: 7px 2vw 6px 2vw;}
       .nostalgia-btn { font-size: 0.9rem; width: 15px; height: 15px; min-width: 15px; min-height: 15px;}
       .nostalgia-btn svg { width: 8px; height: 8px; }
