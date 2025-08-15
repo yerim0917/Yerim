@@ -72,7 +72,7 @@
     }
     .vintage-image-box {
       margin-top: 32px;
-      margin-bottom: 18px;
+      margin-bottom: 0;
       border-radius: 22px;
       overflow: hidden;
       width: 380px;
@@ -100,9 +100,16 @@
       object-fit: cover;
       filter: sepia(0.23) brightness(0.98) blur(0.45px) contrast(0.93);
     }
+    .middle-title-wrapper {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      flex: 1 1 auto;
+      justify-content: center;
+    }
     .track-title {
-      margin-top: 18px;
-      margin-bottom: 5px;
+      display: inline-block;
       font-family: 'Nanum Myeongjo', serif;
       font-size: 1.23rem;
       color: #a3814a;
@@ -118,6 +125,7 @@
       filter: blur(0.1px);
       z-index: 10;
       position: relative;
+      margin: 0 auto;
     }
     .player-panel {
       border-radius: 22px;
@@ -152,7 +160,7 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 18px;
+      gap: 4px; /* 상하 간격을 줄임 */
       width: 100%;
       position: relative;
       z-index: 12;
@@ -161,10 +169,10 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 13px;
+      gap: 20px;
       width: 100%;
-      margin-top: 14px;
-      margin-bottom: 10px;
+      margin-top: 6px;
+      margin-bottom: 2px;
     }
     .nostalgia-btn {
       background: linear-gradient(90deg, #ffd6a5 0%, #ffe6cc 100%);
@@ -172,7 +180,7 @@
       border-radius: 15px;
       box-shadow: 0 1px 4px #e5d3b378, 0 1px 0 #fff7;
       font-family: inherit;
-      font-size: 1.13rem;
+      font-size: 1.3rem;
       font-weight: 600;
       color: #a3814a;
       cursor: pointer;
@@ -182,17 +190,17 @@
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      width: 38px;
-      height: 38px;
-      min-width: 38px;
-      min-height: 38px;
+      width: 54px;
+      height: 54px;
+      min-width: 54px;
+      min-height: 54px;
       margin-right: 0;
       padding: 0;
       z-index: 12;
     }
     .nostalgia-btn svg {
-      width: 20px;
-      height: 20px;
+      width: 34px;
+      height: 34px;
       vertical-align: middle;
       fill: #a3814a;
       display: block;
@@ -200,10 +208,10 @@
     .audio-progress {
       flex: 1 1 auto;
       width: 100%;
-      max-width: 190px;
+      max-width: 240px;
       accent-color: #bfa181;
-      height: 7px;
-      border-radius: 5px;
+      height: 14px;
+      border-radius: 7px;
       background: #f9f6f2;
       box-shadow: 0 1px 2px #e5d3b357;
       margin: 0 5px;
@@ -213,11 +221,11 @@
       color: #a3814a;
       background: #fff7;
       border-radius: 7px;
-      font-size: 0.8rem;
+      font-size: 1.18rem;
       font-family: 'Nanum Myeongjo', serif;
-      padding: 3px 8px 3px 8px;
-      min-width: 51px;
-      max-width: 70px;
+      padding: 6px 14px 6px 14px;
+      min-width: 75px;
+      max-width: 120px;
       text-align: center;
       box-shadow: 0 1px 4px #e5d3b354;
       filter: blur(0.07px);
@@ -238,7 +246,7 @@
       width: 100%;
       justify-content: center;
       gap: 16px;
-      margin-top: 19px;
+      margin-top: 6px; /* 볼륨바와 위 재생영역의 상하 간격 최소화 */
       z-index: 12;
     }
     .volume-slider {
@@ -270,11 +278,11 @@
       .vintage-image-box, .player-panel { width: 99vw; }
       .player-panel { padding: 5vw 2vw 16px 2vw; min-width: 0; margin-bottom: 8vw;}
       .track-title { font-size: 1.03rem; padding: 6px 2vw 5px 2vw;}
-      .nostalgia-btn { font-size: 1rem; width: 24px; height: 24px; min-width: 24px; min-height: 24px;}
-      .nostalgia-btn svg { width: 13px; height: 13px; }
-      .audio-bar-row { gap: 6px; }
-      .audio-progress { max-width: 75px; height: 4px; }
-      .time-label { font-size: 0.46rem; min-width: 21px; max-width: 33px; padding: 2px 3px;}
+      .nostalgia-btn { font-size: 1.1rem; width: 35px; height: 35px; min-width: 35px; min-height: 35px;}
+      .nostalgia-btn svg { width: 20px; height: 20px; }
+      .audio-bar-row { gap: 9px; }
+      .audio-progress { max-width: 100px; height: 9px; }
+      .time-label { font-size: 0.73rem; min-width: 34px; max-width: 65px; padding: 4px 6px;}
       .volume-slider { width: 45vw; }
       .volume-icon svg { width: 13px; height: 13px; }
       .volume-row { gap: 6px; }
@@ -284,13 +292,15 @@
 <body>
   <div class="dust"></div>
   <div class="dust2"></div>
-  <div class="main-container">
+  <div class="main-container" style="min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center;">
     <div class="vintage-image-box">
       <img class="vintage-image"
         src="https://i.pinimg.com/1200x/d4/d8/db/d4d8dbb907930b60040e5ae31bcb15bd.jpg"
         alt="민들레, dandelion" loading="lazy">
     </div>
-    <div class="track-title">Do you remember when I bloomed?</div>
+    <div class="middle-title-wrapper" style="flex:1; display:flex; flex-direction:column; justify-content:center;">
+      <div class="track-title">Do you remember when I bloomed?</div>
+    </div>
     <div class="player-panel">
       <audio id="bgm" src="music.mp3" loop></audio>
       <div id="controls">
