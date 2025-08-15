@@ -88,11 +88,15 @@
       padding-left: 32px;
       padding-right: 32px;
     }
+    .vintage-image-box,
+    .middle-title-wrapper,
+    .player-panel {
+      width: 340px;
+      max-width: 100%;
+    }
     .vintage-image-box {
       border-radius: 22px;
       overflow: hidden;
-      width: 340px;
-      max-width: 100%;
       aspect-ratio: 4/3;
       position: relative;
       background: #fbeee6;
@@ -102,6 +106,7 @@
         0 1px 8px #e5d3b357;
       filter: blur(0.35px) brightness(0.98) contrast(0.93) sepia(0.12);
       margin: 0;
+      padding: 0;
     }
     .vintage-image-box::after {
       content: "";
@@ -118,14 +123,13 @@
       filter: sepia(0.23) brightness(0.98) blur(0.45px) contrast(0.93);
     }
     .middle-title-wrapper {
-      width: 340px;
-      max-width: 100%;
       display: flex;
       flex-direction: column;
       align-items: center;
       flex: 0 0 auto;
       justify-content: center;
       margin: 8px 0 8px 0;
+      padding: 0;
     }
     .track-title {
       width: 100%;
@@ -150,8 +154,6 @@
     .player-panel {
       border-radius: 22px;
       overflow: hidden;
-      width: 340px;
-      max-width: 100%;
       position: relative;
       background: #fbeee6;
       box-shadow:
@@ -159,7 +161,7 @@
         0 0 0 10px #fff7 inset,
         0 1px 8px #e5d3b357;
       filter: blur(0.35px) brightness(0.98) contrast(0.93) sepia(0.12);
-      padding: 20px 18px 18px 18px;
+      padding: 16px 16px 14px 16px;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -297,9 +299,9 @@
     @media (max-width:640px) {
       .main-container { padding-left: 7vw; padding-right: 7vw; }
       .vintage-image-box, .player-panel, .middle-title-wrapper { width: 99vw; max-width: 99vw;}
-      .player-panel { padding: 3vw 2vw 10px 2vw; min-width: 0; margin-bottom: 0;}
+      .player-panel { padding: 3vw 2vw 8px 2vw; min-width: 0; margin-bottom: 0;}
       .track-title { font-size: 0.91rem; padding: 4px 2vw 4px 2vw;}
-      .middle-title-wrapper { margin: 4px 0 4px 0;}
+      .middle-title-wrapper { margin: 4px 0 4px 0; padding: 0;}
       .nostalgia-btn { font-size: 1rem; width: 37px; height: 37px; min-width: 37px; min-height: 37px;}
       .nostalgia-btn svg { width: 20px; height: 20px; }
       .audio-bar-row { gap: 7px; }
