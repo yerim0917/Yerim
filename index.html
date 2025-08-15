@@ -73,6 +73,7 @@
       box-sizing: border-box;
     }
 
+    /* 좌우 여백을 부드럽게 주기 위해 padding 적용 */
     .main-container {
       min-height: 100vh;
       min-height: 100dvh;
@@ -85,12 +86,14 @@
       gap: 12px;
       position: relative;
       z-index: 5;
+      padding-left: 32px;
+      padding-right: 32px;
     }
     .vintage-image-box {
       border-radius: 22px;
       overflow: hidden;
       width: 340px;
-      max-width: 95vw;
+      max-width: 100%;
       aspect-ratio: 4/3;
       position: relative;
       background: #fbeee6;
@@ -117,7 +120,7 @@
     }
     .middle-title-wrapper {
       width: 340px;
-      max-width: 95vw;
+      max-width: 100%;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -149,7 +152,7 @@
       border-radius: 22px;
       overflow: hidden;
       width: 340px;
-      max-width: 95vw;
+      max-width: 100%;
       position: relative;
       background: #fbeee6;
       box-shadow:
@@ -293,6 +296,7 @@
       display: block;
     }
     @media (max-width:640px) {
+      .main-container { padding-left: 7vw; padding-right: 7vw; }
       .vintage-image-box, .player-panel, .middle-title-wrapper { width: 99vw; max-width: 99vw;}
       .player-panel { padding: 3vw 2vw 10px 2vw; min-width: 0; margin-bottom: 0;}
       .track-title { font-size: 0.91rem; padding: 4px 2vw 4px 2vw;}
@@ -311,7 +315,7 @@
 <body>
   <div class="dust"></div>
   <div class="dust2"></div>
-  <div class="main-container" style="height:100vh;min-height:100vh;justify-content:center;">
+  <div class="main-container">
     <div class="vintage-image-box">
       <img class="vintage-image"
         src="https://i.pinimg.com/1200x/d4/d8/db/d4d8dbb907930b60040e5ae31bcb15bd.jpg"
