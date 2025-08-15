@@ -126,11 +126,11 @@
         0 14px 60px 0 rgba(191,161,129,0.16),
         0 0 0 18px #fff5 inset,
         0 1.5px 14px #e5d3b357;
-      padding: 32px 28px 22px 28px;
+      padding: 32px 20px 22px 20px;
       display: flex;
       flex-direction: column;
       align-items: center;
-      min-width: 270px;
+      min-width: 240px;
       max-width: 96vw;
       margin-bottom: 38px;
       margin-top: 0;
@@ -141,44 +141,44 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 13px;
+      gap: 10px;
       width: 100%;
     }
     .audio-bar-row {
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 5px; /* 버튼, 바, 시간 간격 줄임 */
+      gap: 2px; /* 버튼, 바, 시간 간격 극소화 */
       width: 100%;
-      margin-top: 6px;
-      margin-bottom: 6px;
+      margin-top: 3px;
+      margin-bottom: 3px;
     }
     .nostalgia-btn {
       background: linear-gradient(90deg, #ffd6a5 0%, #ffe6cc 100%);
       border: none;
-      border-radius: 15px;
-      box-shadow: 0 1.5px 7px #e5d3b378, 0 1px 0 #fff7;
+      border-radius: 12px;
+      box-shadow: 0 1px 4px #e5d3b378, 0 1px 0 #fff7;
       font-family: inherit;
-      font-size: 1.1rem;
+      font-size: 1rem;
       font-weight: 600;
       color: #a3814a;
       cursor: pointer;
       transition: background 0.22s, transform 0.1s;
       outline: none;
-      filter: blur(0.09px);
+      filter: blur(0.07px);
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      width: 34px;   /* 버튼 크기 줄임 */
-      height: 34px;
-      min-width: 34px;
-      min-height: 34px;
+      width: 22px;
+      height: 22px;
+      min-width: 22px;
+      min-height: 22px;
       margin-right: 0;
       padding: 0;
     }
     .nostalgia-btn svg {
-      width: 18px;
-      height: 18px;
+      width: 12px;
+      height: 12px;
       vertical-align: middle;
       fill: #a3814a;
       display: block;
@@ -186,23 +186,24 @@
     .audio-progress {
       flex: 1 1 auto;
       width: 100%;
-      max-width: 200px;
+      max-width: 120px;
       accent-color: #bfa181;
-      height: 6px;
-      border-radius: 6px;
+      height: 4px;
+      border-radius: 4px;
       background: #f9f6f2;
-      box-shadow: 0 1.5px 4px #e5d3b357;
-      margin: 0 2px;
+      box-shadow: 0 1px 2px #e5d3b357;
+      margin: 0 1px;
       cursor: pointer;
     }
     .time-label {
       color: #a3814a;
       background: #fff7;
-      border-radius: 6px;
-      font-size: 0.6rem;      /* 더 작게 */
+      border-radius: 5px;
+      font-size: 0.48rem;
       font-family: 'Nanum Myeongjo', serif;
-      padding: 1.2px 2px 1.2px 2px;
-      min-width: 41px;
+      padding: 0.5px 1.5px 0.5px 1.5px;
+      min-width: 27px;
+      max-width: 31px;
       text-align: center;
       box-shadow: 0 1px 4px #e5d3b354;
       filter: blur(0.07px);
@@ -214,7 +215,6 @@
       overflow: hidden;
       text-overflow: ellipsis;
       vertical-align: middle;
-      max-width: 44px;
     }
     .volume-row {
       display: flex;
@@ -223,49 +223,49 @@
       color: #b4846c;
       width: 100%;
       justify-content: center;
-      gap: 10px;
-      margin-top: 10px;
+      gap: 8px;
+      margin-top: 7px;
     }
     .volume-slider {
-      width: 160px;
-      max-width: 55vw;
+      width: 110px;
+      max-width: 38vw;
       accent-color: #bfa181;
       vertical-align: middle;
-      height: 27px;
+      height: 18px;
       background: none;
-      filter: blur(0.2px);
+      filter: blur(0.13px);
     }
     .volume-icon {
-      font-size: 2rem;
+      font-size: 1.2rem;
       color: #bfa181;
       display: flex;
       align-items: center;
       justify-content: center;
-      width: 36px;
-      height: 36px;
-      margin-right: 3px;
-    }
-    .volume-icon svg {
       width: 18px;
       height: 18px;
+      margin-right: 2px;
+    }
+    .volume-icon svg {
+      width: 12px;
+      height: 12px;
       fill: #bfa181;
       display: block;
     }
     @media (max-width:640px) {
       .vintage-image-box { width: 96vw; }
       .player-panel {
-        padding: 5vw 2vw 24px 2vw;
+        padding: 5vw 2vw 18px 2vw;
         min-width: 0;
-        margin-bottom: 20vw;
+        margin-bottom: 12vw;
       }
       .track-title { font-size: 1.04rem; padding: 7px 2vw 6px 2vw;}
-      .nostalgia-btn { font-size: 1rem; padding: 0; width: 22px; height: 22px; min-width: 22px; min-height: 22px;}
-      .nostalgia-btn svg { width: 12px; height: 12px; }
-      .audio-bar-row { gap: 2px; }
-      .audio-progress { max-width: 80px; height: 5px; }
-      .time-label { font-size: 0.39rem; min-width: 18px; max-width: 29px; padding: 1px 1px;}
-      .volume-slider { width: 49vw; }
-      .volume-icon svg { width: 12px; height: 12px; }
+      .nostalgia-btn { font-size: 0.9rem; width: 15px; height: 15px; min-width: 15px; min-height: 15px;}
+      .nostalgia-btn svg { width: 8px; height: 8px; }
+      .audio-bar-row { gap: 1px; }
+      .audio-progress { max-width: 50px; height: 3px; }
+      .time-label { font-size: 0.33rem; min-width: 12px; max-width: 18px; padding: 0.5px 0.5px;}
+      .volume-slider { width: 28vw; }
+      .volume-icon svg { width: 8px; height: 8px; }
     }
   </style>
 </head>
